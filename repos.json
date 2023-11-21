@@ -3,7 +3,7 @@
       "name": "dark-KernelSU",
       "repo": "https://github.com/PixelExperience-Devices/kernel_oneplus_sm8150",
       "branch": "thirteen",
-      "device": "sm8150"
+      "device": "vendor/sm8150-perf"
     },
     "withKernelSU": true,
     "toolchains": [
