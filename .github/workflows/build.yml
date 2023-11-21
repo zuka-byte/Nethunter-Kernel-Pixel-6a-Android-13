@@ -122,8 +122,7 @@ jobs:
           echo "args=$args" >> $GITHUB_OUTPUT
           echo "extraParams_toJson: $extraParams"
           extra_params=$(echo $extraParams | jq -r ' to_entries[] | select(.value != "") | "\(.key)=\(.value)"' | tr "\n" " " | sed 's/ $//')
-          export $extra_params
-          echo "$extra_params" >> $GITHUB_OUTPUT
+          echo "args=$args $extra_params" >> $GITHUB_OUTPUT
 
       - name: "😋 Update KernelSU"
         working-directory: ./${{ env.kernelDir }}/${{ env.kernelName }}
