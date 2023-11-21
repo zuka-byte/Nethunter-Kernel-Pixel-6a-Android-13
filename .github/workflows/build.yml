@@ -121,7 +121,8 @@ jobs:
           fi
           echo "args=$args" >> $GITHUB_OUTPUT
           echo "extraParams: $extraParams"
-          extra_params=$(echo $extraParams | jq -r '.[].extraParams | to_entries[] | select(.value != "") | "\(.key)=\(.value)"' | tr "\n" " " | sed 's/ $//')
+          # extra_params=$(echo $extraParams | jq -r '.[].extraParams | to_entries[] | select(.value != "") | "\(.key)=\(.value)"' | tr "\n" " " | sed 's/ $//')
+          extra_params=$(echo $extraParams | jq -r '.extraParams | to_entries[] | select(.value != "") | "\(.key)=\(.value)"' | tr "\n" " " | sed 's/ $//')
           echo "args=$args $extra_params" >> $GITHUB_OUTPUT
 
       - name: "😋 Update KernelSU"
