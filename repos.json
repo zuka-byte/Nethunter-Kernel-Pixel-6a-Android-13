@@ -26,6 +26,10 @@
       "CLANG_TRIPLE": "aarch64-linux-gnu-",
       "AR": "",
       "CC": "clang"
+    },
+    "extraParams": {
+      "OPLUS_FEATURE_BUILD": true,
+      "KEEP": ""
     }
   }
 ]

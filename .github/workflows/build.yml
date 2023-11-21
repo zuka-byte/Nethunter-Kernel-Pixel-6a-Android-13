@@ -82,6 +82,7 @@ jobs:
         working-directory: ./${{ env.kernelDir }}
         env:
           params: "${{ toJSON(matrix.repos.params) }}"
+          extraParams: "${{ toJSON(matrix.repos.extraParams) }}"
           THREAD: $(nproc --all)
         run: |
           echo "PATH Variable: $PATH"
@@ -119,6 +120,9 @@ jobs:
             args="$args CC=$CC"
           fi
           echo "args=$args" >> $GITHUB_OUTPUT
+          echo "extraParams: $extraParams"
+          extra_params=$(echo $extraParams | jq -r '.[].extraParams | to_entries[] | select(.value != "") | "\(.key)=\(.value)"' | tr "\n" " " | sed 's/ $//')
+          echo "args=$args $extra_params" >> $GITHUB_OUTPUT
 
       - name: "😋 Update KernelSU"
         working-directory: ./${{ env.kernelDir }}/${{ env.kernelName }}
