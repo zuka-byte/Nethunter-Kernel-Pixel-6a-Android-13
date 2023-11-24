@@ -1,11 +1,11 @@
 [  {
     "kernelSource": {
-      "name": "dark-KernelSU",
-      "repo": "https://github.com/PixelExperience-Devices/kernel_oneplus_sm8150",
-      "branch": "thirteen",
+      "name": "dark-Kernel",
+      "repo": "https://github.com/LineageOS/android_kernel_qcom_sm8150",
+      "branch": "lineage-20",
       "device": "vendor/sm8150-perf"
     },
-    "withKernelSU": true,
+    "withKernelSU": false,
     "toolchains": [
       {
         "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
@@ -28,7 +28,6 @@
       "CC": "clang"
     },
     "extraParams": {
-      "OPLUS_FEATURE_BUILD": true,
       "KEEP": ""
     }
   }
