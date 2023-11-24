@@ -3,7 +3,7 @@
       "name": "dark-Kernel",
       "repo": "https://github.com/LineageOS/android_kernel_qcom_sm8150",
       "branch": "lineage-20",
-      "device": "vendor/sm8150-perf"
+      "device": "sm8150-perf"
     },
     "withKernelSU": false,
     "toolchains": [
