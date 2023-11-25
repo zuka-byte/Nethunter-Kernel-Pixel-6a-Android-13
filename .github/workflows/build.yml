@@ -154,10 +154,10 @@ jobs:
       - name: "🏴‍☠️ Before Action "
         env:
             args: ${{ steps.generate-args.outputs.args }}
-        working-directory: ./${{ env.kernelDir }}/${{ env.kernelName }}
+        working-directory: ./${{ env.kernelDir }}/${{ env.kernelDir }}/${{ env.OUT_DIR }}
         run: |
-          echo ${args}
-          pwd
+          echo "args ---> ${args}"
+          echo "current path ---> $(pwd)"
           # CONFIG_BUILD_ARM64_APPENDED_DTBO_IMAGE
           if grep -q "CONFIG_BUILD_ARM64_APPENDED_DTBO_IMAGE=y" .config; then
             sed -i 's/CONFIG_BUILD_ARM64_APPENDED_DTBO_IMAGE=y/CONFIG_BUILD_ARM64_APPENDED_DTBO_IMAGE=n/' .config  
