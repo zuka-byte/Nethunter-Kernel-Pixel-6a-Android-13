@@ -154,7 +154,7 @@ jobs:
       - name: "🏴‍☠️ Before Action "
         env:
             args: ${{ steps.generate-args.outputs.args }}
-        working-directory: ./${{ env.kernelDir }}/${{ env.kernelDir }}/${{ env.OUT_DIR }}
+        working-directory: ./${{ env.kernelDir }}/${{ env.OUT_DIR }}
         run: |
           echo "args ---> ${args}"
           echo "current path ---> $(pwd)"
