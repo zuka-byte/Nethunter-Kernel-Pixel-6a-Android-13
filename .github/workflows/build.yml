@@ -162,8 +162,8 @@ jobs:
       - name: "🏴‍☠️ Post Action "
         working-directory: ./${{ env.kernelDir }}/${{ env.kernelName }}
         run: |
-          make ${args} dtbs
-          make ${args} dtboimage
+          # make ${args} dtbs
+          # make ${args} dtboimage
           find ./${{ env.kernelDir }}/${{ env.OUT_DIR }}/arch/${{ env.ARCH }}/ -type f
 
       - name: "💛 Upload Image"
