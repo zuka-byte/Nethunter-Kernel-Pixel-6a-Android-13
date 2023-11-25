@@ -151,6 +151,23 @@ jobs:
           echo "PATH Variable: $PATH"
           make ${{ env.args }} ${{ env.DEFCONFIG_NAME }}
 
+      - name: "🏴‍☠️ Before Action "
+        run: |
+          pwd
+          # CONFIG_BUILD_ARM64_APPENDED_DTBO_IMAGE
+          if grep -q "CONFIG_BUILD_ARM64_APPENDED_DTBO_IMAGE=y" .config; then
+            sed -i 's/CONFIG_BUILD_ARM64_APPENDED_DTBO_IMAGE=y/CONFIG_BUILD_ARM64_APPENDED_DTBO_IMAGE=n/' .config  
+          fi
+          # CONFIG_DYNAMIC_FDT
+          if grep -q "CONFIG_DYNAMIC_FDT=n" .config; then
+            sed -i 's/CONFIG_DYNAMIC_FDT=n/CONFIG_DYNAMIC_FDT=y/' .config
+          fi
+          # CONFIG_OF_DYNAMIC
+          if grep -q "CONFIG_OF_DYNAMIC=n" .config; then
+            sed -i 's/CONFIG_OF_DYNAMIC=n/CONFIG_OF_DYNAMIC=y/' .config  
+          fi
+          cat .config
+          
       - name: "🎶 Build kernel"
         working-directory: ./${{ env.kernelDir }}/${{ env.kernelName }}
         env:
