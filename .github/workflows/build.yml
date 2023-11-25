@@ -152,7 +152,11 @@ jobs:
           make ${{ env.args }} ${{ env.DEFCONFIG_NAME }}
 
       - name: "🏴‍☠️ Before Action "
+        env:
+            args: ${{ steps.generate-args.outputs.args }}
+        working-directory: ./${{ env.kernelDir }}/${{ env.kernelName }}
         run: |
+          echo ${args}
           pwd
           # CONFIG_BUILD_ARM64_APPENDED_DTBO_IMAGE
           if grep -q "CONFIG_BUILD_ARM64_APPENDED_DTBO_IMAGE=y" .config; then
