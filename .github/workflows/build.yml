@@ -160,10 +160,10 @@ jobs:
           make ${args}
 
       - name: "🏴‍☠️ Post Action "
-        working-directory: ./${{ env.kernelDir }}/${{ env.kernelName }}
         run: |
           # make ${args} dtbs
           # make ${args} dtboimage
+          pwd
           find ./${{ env.kernelDir }}/${{ env.OUT_DIR }}/arch/${{ env.ARCH }}/ -type f
 
       - name: "💛 Upload Image"
