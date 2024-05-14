@@ -1,9 +1,9 @@
 [  {
     "kernelSource": {
       "name": "dark-Kernel",
-      "repo": "https://github.com/LineageOS/android_kernel_qcom_sm8150",
-      "branch": "lineage-20",
-      "device": "sm8150-perf"
+      "repo": "https://github.com/BlkeBrns/DarkKernel",
+      "branch": "main",
+      "device": "bluejay"
     },
     "withKernelSU": true,
     "toolchains": [
