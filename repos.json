@@ -1,8 +1,8 @@
 [  {
     "kernelSource": {
-      "name": "dark-Kernel",
-      "repo": "https://github.com/BlkeBrns/DarkKernel",
-      "branch": "main",
+      "name": "Lineage21",
+      "repo": "https://github.com/LineageOS/android_kernel_google_gs201",
+      "branch": "lineage-21",
       "device": "bluejay"
     },
     "withKernelSU": true,
