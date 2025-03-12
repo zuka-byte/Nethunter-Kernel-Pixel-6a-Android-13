@@ -1,8 +1,8 @@
 [  {
     "kernelSource": {
-      "name": "Lineage21",
-      "repo": "https://android.googlesource.com/kernel/configs/",
-      "branch": "android-gs-bluejay-5.10-android14-qpr3-beta",
+      "name": "Tensor101 NetHunter",
+      "repo": "https://github.com/gs-bluraviole/android_kernel_google_gs101/kernel/configs/",
+      "branch": "android-gs-raviole-6.1-android15-qpr2",
       "device": "bluejay"
     },
     "withKernelSU": true,
@@ -14,7 +14,7 @@
       },
       {
         "repo": "https://gitlab.com/ThankYouMario/android_prebuilts_clang-standalone/",
-        "branch": "11",
+        "branch": "18",
         "name": "clang"
       }
     ],
