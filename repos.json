@@ -1,6 +1,6 @@
 [  {
     "kernelSource": {
-      "name": "Tensor101 NetHunter",
+      "name": "gta4xl nh",
       "repo": "https://github.com/LineageOS/android_kernel_samsung_gta4xl",
       "branch": "lineage-22.1"
       "device": "gta4xl"
