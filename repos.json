@@ -2,7 +2,7 @@
     "kernelSource": {
       "name": "gta4xl",
       "repo": "https://github.com/LineageOS/android_kernel_samsung_gta4xl",
-      "branch": "lineage-22.1"
+      "branch": "lineage-22.1",
       "device": "bluejay"
     },
     "withKernelSU": true,
