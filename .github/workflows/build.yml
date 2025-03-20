@@ -55,19 +55,16 @@ jobs:
     steps:
       - name: "✨ Create working dir"
         run: mkdir -p $kernelDir
-        
-      - name: "Create working directory"
-        run: mkdir -p ./Tensor101\ NetHunter_bluejay
-      
+
       - name: "⭐ Install prerequisites"
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential bc curl git zip ftp gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev lftp zstd wget libfl-dev python3 libarchive-tools
+          sudo apt-get install -y build-essential bc curl git zip ftp gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev lftp zstd wget libfl-dev python2 python3 libarchive-tools
 
       - name: "🌟 Clone kernel source => (${{ env.kernelRepo }})"
         working-directory: ./${{ env.kernelDir }}
         run: |
-          git clone --recursive --branch ${{ env.kernelBranch }} ${{ env.kernelRepo }} ${{ env.kernelName }} --depth=1
+          git clone --recursive --branch $kernelBranch $kernelRepo $kernelName --depth=1
 
       - name: "💫 Get toolchains"
         working-directory: ./${{ env.kernelDir }}
@@ -171,7 +168,7 @@ jobs:
           echo "CONFIG_OF_CONFIGFS=y" >> .config
           echo "CONFIG_OF_OVERLAY=y" >> .config
           cat .config
-          
+
       - name: "🎶 Build kernel"
         working-directory: ./${{ env.kernelDir }}/${{ env.kernelName }}
         env:
@@ -190,7 +187,7 @@ jobs:
       - name: "💛 Upload Image"
         uses: actions/upload-artifact@v4
         with:
-          name: Image(${{ env.kernelDevice }}-${{{ env.kernelName }}-${{ env.kernelBranch }})
+          name: Image(${{ env.kernelDevice }}-${{ env.kernelName }}-${{ env.kernelBranch }})
           path: ./${{ env.kernelDir }}/${{ env.OUT_DIR }}/arch/${{ env.ARCH }}/boot/Image
           if-no-files-found: ignore
           retention-days: 7
