@@ -16,18 +16,14 @@ jobs:
     steps:
       - name: "😄 Checkout"
         uses: actions/checkout@v4
-      - name: fix error with upload
-        uses: actions/upload-artifact@v4
-        with:
-          path: ./images
-      - name: fixes download error
-        uses: actions/download-artifact@v4
-        with:
-          path: ./images
+      - name: "Print repos.json"
+        run: cat ${{ env.CONFIGURATION }}
       - name: "😆 Generate Matrix"
         id: generate-matrix
         run: |
           echo "repos=$(jq -c . < ${{ env.CONFIGURATION }})" >> $GITHUB_OUTPUT
+      - name: "Print generated repos"
+        run: echo ${{ steps.generate-matrix.outputs.repos }}
 
   Build-Kernel:
     name: "🐎 Build kernel"
