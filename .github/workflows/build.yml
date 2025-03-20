@@ -19,11 +19,11 @@ jobs:
       - name: fix error with upload
         uses: actions/upload-artifact@v4
         with:
-            path: ./images
+          path: ./images
       - name: fixes download error
         uses: actions/download-artifact@v4
         with:
-            path: ./images
+          path: ./images
       - name: "😆 Generate Matrix"
         id: generate-matrix
         run: |
@@ -55,7 +55,7 @@ jobs:
     steps:
       - name: "✨ Create working dir"
         run: mkdir -p $kernelDir
-       
+        
       - name: "Create working directory"
         run: mkdir -p ./Tensor101\ NetHunter_bluejay
       
@@ -67,7 +67,7 @@ jobs:
       - name: "🌟 Clone kernel source => (${{ env.kernelRepo }})"
         working-directory: ./${{ env.kernelDir }}
         run: |
-          git clone --recursive --branch $kernelBranch $kernelRepo $kernelName --depth=1
+          git clone --recursive --branch ${{ env.kernelBranch }} ${{ env.kernelRepo }} ${{ env.kernelName }} --depth=1
 
       - name: "💫 Get toolchains"
         working-directory: ./${{ env.kernelDir }}
@@ -163,7 +163,7 @@ jobs:
 
       - name: "🏴‍☠️ Before Action "
         env:
-            args: ${{ steps.generate-args.outputs.args }}
+          args: ${{ steps.generate-args.outputs.args }}
         working-directory: ./${{ env.kernelDir }}/${{ env.OUT_DIR }}
         run: |
           echo "args ---> ${args}"
@@ -190,7 +190,7 @@ jobs:
       - name: "💛 Upload Image"
         uses: actions/upload-artifact@v4
         with:
-          name: Image(${{ env.kernelDevice }}-${{ env.kernelName }}-${{ env.kernelBranch }})
+          name: Image(${{ env.kernelDevice }}-${{{ env.kernelName }}-${{ env.kernelBranch }})
           path: ./${{ env.kernelDir }}/${{ env.OUT_DIR }}/arch/${{ env.ARCH }}/boot/Image
           if-no-files-found: ignore
           retention-days: 7
