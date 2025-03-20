@@ -5,7 +5,7 @@
       "branch": "lineage-22.1",
       "device": "bluejay"
     },
-    "withKernelSU": true,
+    "withKernelSU": false,
     "toolchains": [
       {
         "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
