@@ -55,7 +55,8 @@ jobs:
     steps:
       - name: "✨ Create working dir"
         run: mkdir -p $kernelDir
-
+      - name: fix kali directory error
+        run: mkdir -p ./Tensor101\ NetHunter_bluejay
       - name: "⭐ Install prerequisites"
         run: |
           sudo apt-get update
