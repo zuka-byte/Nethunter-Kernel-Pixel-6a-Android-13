@@ -1,9 +1,9 @@
 [  {
     "kernelSource": {
       "name": "Tensor101 NetHunter",
-      "repo": "https://github.com/gs-bluraviole/android_kernel_google_gs101/kernel/configs/",
-      "branch": "android-gs-raviole-6.1-android15-qpr2",
-      "device": "bluejay"
+      "repo": "https://github.com/LineageOS/android_kernel_samsung_gta4xl",
+      "branch": "lineage-22.1"
+      "device": "gta4xl"
     },
     "withKernelSU": true,
     "toolchains": [
