@@ -5,7 +5,7 @@
       "branch": "lineage-22.1",
       "device": "exynos9611-gta4xl"
     },
-    "withKernelSU": false,
+    "withKernelSU": true,
     "toolchains": [
       {
         "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
@@ -32,3 +32,4 @@
     }
   }
 ]
+
